@@ -1,39 +1,41 @@
 <template>
   <div class="header">
-    <div class="header-logo"><router-link to="/">LOGO</router-link></div>
-    <div class="header-router">
-      <div>
-        <router-link to="/buy">Buy a car</router-link>
-      </div>
-      <div>
-        <router-link to="/sell">Sell Car</router-link>
-      </div>
-      <div>
-        <router-link to="/app">Kavak App</router-link>
-      </div>
-      <div class="header-router__about">
-        <div class="header-router__about-left" @click="setOpenModal('about')">
-          <p>About</p>
-          <v-icon
-            name="fa-angle-down"
-            :class="openModal.about && 'active-icon'"
-          />
+    <div class="container">
+      <div class="header-logo"><router-link to="/">LOGO</router-link></div>
+      <div class="header-router">
+        <div>
+          <router-link to="/buy">Buy a car</router-link>
         </div>
-        <div class="header__modal" v-if="openModal.about">
-          <div>Where are we</div>
-          <div>Where are we</div>
-          <div>Where are we</div>
+        <div>
+          <router-link to="/sell">Sell Car</router-link>
         </div>
-      </div>
-      <div class="header-router__user">
-        <div class="header-router__user-left" @click="setOpenModal('user')">
-          <v-icon name="la-user-circle-solid" scale="1.5" />
-          <p>My Account</p>
+        <div>
+          <router-link to="/app">Kavak App</router-link>
         </div>
-        <div class="header__modal" v-if="openModal.user">
-          <div>Where are we</div>
-          <div>Where are we</div>
-          <div>Where are we</div>
+        <div class="header-router__about">
+          <div class="header-router__about-left" @click="setOpenModal('about')">
+            <p>About</p>
+            <v-icon
+              name="fa-angle-down"
+              :class="openModal.about && 'active-icon'"
+            />
+          </div>
+          <div class="header__modal" v-if="openModal.about">
+            <div>Where are we</div>
+            <div>Where are we</div>
+            <div>Where are we</div>
+          </div>
+        </div>
+        <div class="header-router__user">
+          <div class="header-router__user-left" @click="setOpenModal('user')">
+            <v-icon name="la-user-circle-solid" scale="1.5" />
+            <p>My Account</p>
+          </div>
+          <div class="header__modal" v-if="openModal.user">
+            <div>Where are we</div>
+            <div>Where are we</div>
+            <div>Where are we</div>
+          </div>
         </div>
       </div>
     </div>
@@ -69,21 +71,20 @@ a {
   color: #2c3e50;
 }
 .header {
+  border-bottom: #2c3e5081 3px solid;
   display: flex;
   justify-content: space-between;
-  padding: 10px 3%;
   align-items: center;
   background-color: white;
-  border-bottom: #2c3e5081 3px solid;
   &-logo {
     font-size: 3rem;
   }
   &-router {
     display: flex;
     justify-content: space-between;
-    width: 35%;
     > div {
       cursor: pointer;
+      margin-left: 20px;
     }
     &__about {
       position: relative;
@@ -119,6 +120,7 @@ a {
   display: block;
   padding: 20px;
   border-radius: 10px;
+  z-index: 2;
 }
 
 .active-icon {

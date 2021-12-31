@@ -1,17 +1,19 @@
 <template>
   <div class="sell-car">
-    <div class="sell-car__left">
-      <h1>{{ sellCarPage.title }}</h1>
-      <div v-for="(desc, i) in sellCarPage.description" :key="i">
-        <p>{{ desc }}</p>
-        <hr />
+    <div class="container">
+      <div class="sell-car__left">
+        <h1>{{ sellCarPage.title }}</h1>
+        <div v-for="(desc, i) in sellCarPage.description" :key="i">
+          <p>{{ desc }}</p>
+          <hr />
+        </div>
+        <button>
+          <p>{{ sellCarPage.button }}</p>
+        </button>
       </div>
-      <button>
-        <p>{{ sellCarPage.button }}</p>
-      </button>
-    </div>
-    <div class="sell-car__right">
-      <img :src="sellCarPage.image" alt="" />
+      <div class="sell-car__right">
+        <img :src="sellCarPage.image" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -26,7 +28,7 @@ export default defineComponent({
     const sellCarPage = reactive({
       image:
         "https://images.kavak.services/br/assets/images/home/jpg/jumbotron-change-sell-sm.jpg",
-      title: "Schedule an inspection at home or at our nearest store",
+      title: "Change or sell your car in 1 day",
       description: [
         "Schedule an inspection at home or at our nearest store",
         "Sell ​​your car at competitive prices in the market",
@@ -44,13 +46,23 @@ export default defineComponent({
 .sell-car {
   background-color: var(--primary);
   display: flex;
-  padding: 50px 200px;
-  > div {
-    width: 50%;
+  .container {
+    > div {
+      width: 50%;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 25px 0;
+      height: 100%;
+      display: flex;
+    }
   }
   &__left {
     text-align: start;
     color: var(--white);
+    width: 50%;
+    margin: 50px auto;
     > button {
       @include button-custom(var(--white), var(--black));
     }
@@ -60,9 +72,11 @@ export default defineComponent({
     }
   }
   &__right {
-    align-items: center;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    > img {
+      width: 100%;
+    }
   }
 }
 </style>

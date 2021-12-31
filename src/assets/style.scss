@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+3D&family=Shizuru&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shizuru&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pushster&family=Rock+3D&family=Shizuru&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import "./mixin.scss";
 :root {
   --black: black;
   --white: white;
@@ -10,17 +9,32 @@
 @mixin button-custom($black, $white) {
   background-color: $black;
   color: $white;
-  padding: 0 100px;
+  padding: 0 30px;
   border-radius: 10px;
   border: none;
   margin-bottom: 24px;
   &:hover {
     background-color: $white;
     color: $black;
-    border: $black 1px solid;
+    @if ($black== var(--black)) {
+      border: $black 1px solid;
+    }
+    p {
+      color: $black;
+    }
     cursor: pointer;
   }
-  > p {
+  p {
     font-weight: 600;
+    color: $white;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
 }
