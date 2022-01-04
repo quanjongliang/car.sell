@@ -36,8 +36,6 @@ export default defineComponent({
     const index = ref<number>(0);
     setInterval(() => {
       index.value++;
-      console.log(index.value);
-
       if (index.value > introduce.length - 1) {
         index.value = 0;
       }

@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <introduce />
+    <slide-reason />
     <sell-car />
     <credit />
     <after-sell />
     <hubs />
     <videos-list />
+    <custom-rating />
   </div>
 </template>
 
@@ -17,6 +19,8 @@ import Introduce from "@/components/Home/Introduce.vue";
 import SellCar from "@/components/Home/SellCar.vue";
 import VideosList from "@/components/Home/VideosList.vue";
 import { defineComponent } from "vue";
+import SlideReason from "@/components/Home/SlideReason.vue";
+import CustomRating from "@/components/Home/CustomRating.vue";
 
 export default defineComponent({
   name: "Home",
@@ -27,6 +31,8 @@ export default defineComponent({
     AfterSell,
     Hubs,
     VideosList,
+    SlideReason,
+    CustomRating,
   },
 });
 </script>

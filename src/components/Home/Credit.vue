@@ -39,6 +39,7 @@ export default defineComponent({
 <style lang="scss">
 @import "../../assets/style.scss";
 .credit {
+  overflow: hidden;
   &-image {
     width: 50%;
     &-phone {
